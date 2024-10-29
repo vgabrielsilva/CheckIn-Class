@@ -21,6 +21,6 @@ Componentes:<br>
 Funcionamento:<br>
 Os alunos inserem suas matrículas no teclado matricial, que são validadas e mostradas no display LCD. Em seguida, respondem a tópicos discutidos em sala usando o teclado colorido.
 Os dados coletados são enviados em tempo real ao sistema Python do professor via protocolo MQTT, que permite o controle completo do sistema.
-No final, o professor recebe um relatório detalhado da presença e das respostas dos alunos.<br><br>
+No final, o professor recebe um relatório detalhado da presença e das respostas dos alunos.<br>
 
-[Vídeo de apresentação](https://youtu.be/6DZz4nTwumk)
+Acesso ao [Vídeo de apresentação](https://youtu.be/6DZz4nTwumk)
