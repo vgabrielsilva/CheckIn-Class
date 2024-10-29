@@ -1,5 +1,5 @@
-* CheckIn Class
-
+# CheckIn Class
+## Sistema inteligente para salas de aula
 O CheckIn Class é um sistema de presença e feedback desenvolvido para melhorar a interação em salas de aula.
 O projeto busca automatizar o registro de presença e permitir que os alunos forneçam feedback sobre as aulas, promovendo um ambiente educacional mais engajado.
 Esse sistema foi idealizado para simplificar o acompanhamento da frequência dos alunos e personalizar o ensino com base no retorno deles.
@@ -21,4 +21,6 @@ Componentes:<br>
 Funcionamento:<br>
 Os alunos inserem suas matrículas no teclado matricial, que são validadas e mostradas no display LCD. Em seguida, respondem a tópicos discutidos em sala usando o teclado colorido.
 Os dados coletados são enviados em tempo real ao sistema Python do professor via protocolo MQTT, que permite o controle completo do sistema.
-No final, o professor recebe um relatório detalhado da presença e das respostas dos alunos.
+No final, o professor recebe um relatório detalhado da presença e das respostas dos alunos.<br><br>
+
+[Vídeo de apresentação](https://youtu.be/6DZz4nTwumk)
