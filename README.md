@@ -24,4 +24,4 @@ Os alunos inserem suas matrículas no teclado matricial, que são validadas e mo
 Os dados coletados são enviados em tempo real ao sistema Python do professor via protocolo MQTT, que permite o controle completo do sistema.
 No final, o professor recebe um relatório detalhado da presença e das respostas dos alunos.<br>
 
-Acesso ao [Vídeo de apresentação](https://youtu.be/6DZz4nTwumk)
+<!--Acesso ao [Vídeo de apresentação](https://youtu.be/6DZz4nTwumk)
