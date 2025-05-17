@@ -110,9 +110,9 @@ def atualizar():
     else:
         print(f"Falha ao acessar a página. Status code: {response.status_code}")
 
-# configuração da interface gráfica (usando o Tkinter)
+# configuração da interface gráfica (usamos o Tkinter)
 OUTPUT_PATH = Path(__file__).parent
-ASSETS_PATH = OUTPUT_PATH / "assets" / "frame0"  # Caminho relativo para a pasta frame0
+ASSETS_PATH = OUTPUT_PATH / "assets" / "frame0"  # caminho relativo para a pasta frame0
 
 def relative_to_assets(path: str) -> Path:
     return ASSETS_PATH / Path(path)
@@ -285,7 +285,7 @@ entry_2.place(
 
 #posicionamento do scroll
 scrollbar.place(
-    x=412.0,  # 105 (posição x do entry_2) + 304 (largura do entry_2)
+    x=412.0,  #105 (posição x do entry_2) + 304 (largura do entry_2)
     y=330.0,
     height=232.0
 )
@@ -391,16 +391,14 @@ scrollbar_dois.place(
 
 
 
-# Função para criar e exibir gráficos com rolagem e scroll do mouse apenas no Canvas
+#criar e exibir gráficos com rolagem e scroll do mouse só no Canvas
 def plotar_com_rolagem(widget_pai):
     largura, altura = 324, 143
-
-    # Canvas com barra de rolagem, sem bordas
+    
     canvas = Canvas(widget_pai, width=largura, height=altura, highlightthickness=0)
     barra_rolagem = Scrollbar(widget_pai, orient="vertical", command=canvas.yview)
     quadro_rolavel = Frame(canvas)
 
-    # Configurar o Canvas para a barra de rolagem
     quadro_rolavel.bind(
         "<Configure>",
         lambda e: canvas.configure(scrollregion=canvas.bbox("all"))
@@ -409,11 +407,9 @@ def plotar_com_rolagem(widget_pai):
     canvas.create_window((0, 0), window=quadro_rolavel, anchor="nw")
     canvas.configure(yscrollcommand=barra_rolagem.set)
 
-    # Posicionamento do Canvas e Barra de Rolagem
     canvas.place(x=646, y=417)  
     barra_rolagem.place(x=660 + largura - 15, y=417, height=altura)
 
-    # Função para criar gráfico circular (pizza)
     def criar_grafico_pizza(pai, dados, rotulos, titulo, posicao_y):
         titulo_label = Label(pai, text=titulo, font=("Poppins Bold", 14 * -1), fg='#250C6B', bg="#F0F0F0") 
         titulo_label.pack(pady=(posicao_y, 1))
@@ -421,7 +417,6 @@ def plotar_com_rolagem(widget_pai):
         figura = Figure(figsize=(largura / 100, altura / 100), dpi=100)
         eixo = figura.add_subplot(111)
 
-        # Função para customizar o texto das porcentagens
         def calcular_porcentagem(valores):
             def autopct(pct):
                 total = sum(valores)
@@ -436,7 +431,6 @@ def plotar_com_rolagem(widget_pai):
         eixo.axis('equal')
         figura.patch.set_facecolor('none')
 
-        # Canvas para a figura
         grafico_canvas = FigureCanvasTkAgg(figura, master=pai)
         grafico_canvas.draw()
         widget_grafico = grafico_canvas.get_tk_widget()
@@ -459,12 +453,9 @@ def plotar_com_rolagem(widget_pai):
     valores5 = [10, 40, 40]
     criar_grafico_pizza(quadro_rolavel, valores5, rotulo, titulo="Pergunta 5", posicao_y=0)
 
-# Configuração e exibição dos gráficos no Canvas
-plotar_com_rolagem(widget_pai=canvas)  # Substitua 'canvas' pelo widget pai adequado, se necessário
+# configuração e exibição dos gráficos no Canvas
+plotar_com_rolagem(widget_pai=canvas)
  
-
-
-
 
 canvas.create_text(
     105.0,
@@ -562,9 +553,6 @@ button_enviar.place(
 )
 
 
-
-
-
 # botão pra adicionar assunto
 button_image_1 = PhotoImage(
     file=relative_to_assets("button_1.png"))
@@ -581,7 +569,6 @@ button_1.place(
     width=66.0,
     height=25.0
 )
-
 
 
 def encerrar_programa():
@@ -607,7 +594,6 @@ button_2.place(
 )
 
 
-
 def iniciar():
     comando = "comando_iniciar"
     enviar_mensagem_mqtt(comando)
@@ -630,8 +616,6 @@ button_3.place(
 )
 
 
-
-
 #criação e configuração da janela criada quando aciona o botao de wifi
 def atualizar_wifi():
     
@@ -651,7 +635,6 @@ def atualizar_wifi():
     
 
     
-
     # decodigica a string base64
     icone_bytes = base64.b64decode(icone_wifi_base64)
     icone_imagem = PhotoImage(data=icone_bytes)
@@ -730,8 +713,6 @@ def atualizar_wifi():
         login_enviar = (f"comando_wifi{rede}+{senha}")
         enviar_mensagem_mqtt(login_enviar)
         label_resposta.config(text=f"{login_enviar}")
-
-
 
 
 
